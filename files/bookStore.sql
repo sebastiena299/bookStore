@@ -29,7 +29,7 @@ CREATE TABLE customers (
 	email				varchar(30)	NOT NULL,
 	phone 				int(10)	 	NOT NULL,
 	address				varchar(60)	NOT NULL,
-	roles				int(4)		NOT NULL,
+	roles				int(4)		DEFAULT 1,
 	FOREIGN KEY (roles) REFERENCES roles(id)
 ) ENGINE = InnoDB;
 
