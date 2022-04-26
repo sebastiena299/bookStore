@@ -25,3 +25,7 @@
 ### :page_facing_up: Functional specifications :
 
 ### :triangular_ruler: Database schema :
+
+![DatabaseSchema](BookStore.png)
+
+---
