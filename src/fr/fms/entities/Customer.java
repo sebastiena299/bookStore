@@ -6,11 +6,31 @@ public class Customer {
 	private String name;
 	private String lastname;
 	private String email;
+	private String password;
 	private String phone;
 	private String address;
 	private int roles;
 	
 	public Customer() {};
+	
+	public Customer(String name, String lastname, String email, String password, String phone, String address) {
+		setName(name);
+		setLastname(lastname);
+		setEmail(email);
+		setPassword(password);
+		setPhone(phone);
+		setAddress(address);
+	}
+	
+	public Customer(int id, String name, String lastname, String email, String password, String phone, String address) {
+		setId(id);
+		setName(name);
+		setLastname(lastname);
+		setEmail(email);
+		setPassword(password);
+		setPhone(phone);
+		setAddress(address);
+	}
 	
 	public int getId() {
 		return id;
@@ -42,6 +62,14 @@ public class Customer {
 	
 	public void setEmail(String email) {
 		this.email = email;
+	}
+	
+	public String getPassword() {
+		return password;
+	}
+	
+	public void setPassword(String password) {
+		this.password = password;
 	}
 	
 	public String getPhone() {

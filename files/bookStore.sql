@@ -27,7 +27,8 @@ CREATE TABLE customers (
 	name				varchar(30)	NOT NULL,
 	lastname			varchar(30)	NOT NULL,
 	email				varchar(30)	NOT NULL,
-	phone 				int(10)	 	NOT NULL,
+	password			varchar(20) NOT NULL,
+	phone 				varchar(10)	NOT NULL,
 	address				varchar(60)	NOT NULL,
 	roles				int(4)		DEFAULT 1,
 	FOREIGN KEY (roles) REFERENCES roles(id)
