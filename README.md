@@ -6,10 +6,10 @@
 - [ ] :triangular_ruler: Class Diagram
 - [ ] :triangular_ruler: Sequence Diagram
 - [ ] :page_facing_up: Functional specifications
-- [ ] :triangular_ruler: Database with physical schema
+- [x] :triangular_ruler: Database with physical schema
 - [ ] :lock: Restricted right on it
-- [ ] :bookmark_tabs: Sql script
-- [ ] :blue_book: Entities compliant with class diagrams
+- [x] :bookmark_tabs: Sql script
+- [x] :blue_book: Entities compliant with class diagrams
 - [ ] :closed_book: Dao layer
 - [ ] :orange_book: Business layer
 - [ ] :green_book: web layer
