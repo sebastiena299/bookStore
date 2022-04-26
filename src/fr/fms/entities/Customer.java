@@ -8,7 +8,7 @@ public class Customer {
 	private String email;
 	private String phone;
 	private String address;
-	private String roles;
+	private int roles;
 	
 	public Customer() {};
 	
@@ -60,11 +60,11 @@ public class Customer {
 		this.address = address;
 	}
 	
-	public String getRoles() {
+	public int getRoles() {
 		return roles;
 	}
 
-	public void setRoles(String roles) {
+	public void setRoles(int roles) {
 		this.roles = roles;
 	}
 	
