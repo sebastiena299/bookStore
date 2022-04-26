@@ -59,7 +59,7 @@ public class DaoCustomerImpl implements Dao<Customer> {
 	}
 
 	/**
-	 * @param Identifier of the book to be deleted
+	 * @param Identifier of the customer to be deleted
 	 * @return Boolean to know if the operation was successful
 	 * @exception SQLException in case of an error related to a query
 	 */
@@ -77,7 +77,7 @@ public class DaoCustomerImpl implements Dao<Customer> {
 	}
 
 	/**
-	 * @param Identifier of the book to be deleted
+	 * @param Identifier of the customer to be displayed
 	 * @return Object of type Customer
 	 * @exception SQLException in case of an error related to a query
 	 */

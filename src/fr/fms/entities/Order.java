@@ -11,6 +11,17 @@ public class Order {
 	
 	public Order() {};
 	
+	public Order(float totalAmount, int idUser) {
+		setTotalAmount(totalAmount);
+		setIdUser(idUser);
+	}
+	
+	public Order(int id, float totalAmount, int idUser) {
+		setId(id);
+		setTotalAmount(totalAmount);
+		setIdUser(idUser);
+	}
+	
 	public int getId() {
 		return id;
 	}

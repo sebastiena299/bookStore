@@ -2,8 +2,10 @@ package fr.fms;
 
 import fr.fms.dao.DaoBookImpl;
 import fr.fms.dao.DaoCustomerImpl;
+import fr.fms.dao.DaoOrderImpl;
 import fr.fms.entities.Book;
 import fr.fms.entities.Customer;
+import fr.fms.entities.Order;
 
 public class Test {
 
@@ -11,6 +13,7 @@ public class Test {
 		
 		DaoBookImpl shop = new DaoBookImpl();
 		DaoCustomerImpl userDao = new DaoCustomerImpl();
+		DaoOrderImpl orderDao = new DaoOrderImpl();
 		
 		// BOOKS
 		
@@ -45,6 +48,24 @@ public class Test {
 		
 		// CREATE => OK
 		//userDao.create(new Customer("Maurie","Wandrack","mwandrack3@simplemachines.org	", "azerty", "6628997719", "2 Victoria Place"));
+		
+		// ORDERS
+		
+		// READ ALL => OK
+		//orderDao.readAll().stream().forEach(order -> System.out.println(order));
+		
+		// READ BY ID => OK
+		//System.out.println(orderDao.read(3));
+		
+		// DELETE => OK
+		//orderDao.delete(3);
+		
+		// UPDATE => OK
+		//orderDao.update(new Order(2, (float) 568.47, 2));
+		
+		// CREATE => OK
+		//orderDao.create(new Order((float) 219.88, 3));
+		
 	}
 
 }

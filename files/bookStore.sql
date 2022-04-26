@@ -6,7 +6,7 @@ CREATE DATABASE BookStore;
 USE BookStore;
 
 -- -----------------------------------------------------------------------------
--- - Construction des différentes tables                    			     ---
+-- - Création table books				                    			     ---
 -- -----------------------------------------------------------------------------
 CREATE TABLE books (
 	id					int(4)		PRIMARY KEY AUTO_INCREMENT,
@@ -17,11 +17,17 @@ CREATE TABLE books (
 	usedBook			boolean		NOT NULL
 ) ENGINE = InnoDB;
 
+-- -----------------------------------------------------------------------------
+-- - Création table roles				                    			     ---
+-- -----------------------------------------------------------------------------
 CREATE TABLE roles (
 	id					int(4)		PRIMARY KEY AUTO_INCREMENT,
 	type 				varchar(20)	NOT NULL
 ) ENGINE = InnoDB;
 
+-- -----------------------------------------------------------------------------
+-- - Création table customers				                    		     ---
+-- -----------------------------------------------------------------------------
 CREATE TABLE customers (
 	id					int(4)		PRIMARY KEY AUTO_INCREMENT,
 	name				varchar(30)	NOT NULL,
@@ -34,11 +40,17 @@ CREATE TABLE customers (
 	FOREIGN KEY (roles) REFERENCES roles(id)
 ) ENGINE = InnoDB;
 
+-- -----------------------------------------------------------------------------
+-- - Création table themes				                    			     ---
+-- -----------------------------------------------------------------------------
 CREATE TABLE themes (
 	id					int(4)		PRIMARY KEY AUTO_INCREMENT,
 	name				varchar(30)	NOT NULL
 ) ENGINE = InnoDB;
 
+-- -----------------------------------------------------------------------------
+-- - Création table book_themes			                    			     ---
+-- -----------------------------------------------------------------------------
 CREATE TABLE book_themes (
 	idBook				int(4)		NOT NULL,
 	idTheme				int(4)		NOT NULL,
@@ -46,6 +58,9 @@ CREATE TABLE book_themes (
 	FOREIGN KEY (idTheme) REFERENCES themes(id)
 ) ENGINE = InnoDB;
 
+-- -----------------------------------------------------------------------------
+-- - Création table orders				                    			     ---
+-- -----------------------------------------------------------------------------
 CREATE TABLE orders (
 	id 					int(4) 		PRIMARY KEY AUTO_INCREMENT,
 	idUser				int(4)		NOT NULL,
@@ -54,6 +69,9 @@ CREATE TABLE orders (
 	FOREIGN KEY (idUser) REFERENCES customers(id)
 ) ENGINE = InnoDB;
 
+-- -----------------------------------------------------------------------------
+-- - Création table order_detail				               			     ---
+-- -----------------------------------------------------------------------------
 CREATE TABLE order_detail (
 	id					int(4) 		PRIMARY KEY AUTO_INCREMENT,
 	idOrder				int(4)		NOT NULL,
