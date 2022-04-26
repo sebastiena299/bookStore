@@ -10,7 +10,27 @@ public class Book {
 	private float price;
 	private boolean usedBook;
 	
-	public Book() {};
+	public Book() {
+		setQuantity(1);
+	};
+	public Book(String title, String description, String author, float price, boolean usedBook) {
+		setTitle(title);
+		setDescription(description);
+		setAuthor(author);
+		setPrice(price);
+		setUsedBook(usedBook);
+		setQuantity(1);
+	}
+	
+	public Book(int id, String title, String description, String author, float price, boolean usedBook) {
+		setId(id);
+		setTitle(title);
+		setDescription(description);
+		setAuthor(author);
+		setPrice(price);
+		setUsedBook(usedBook);
+		setQuantity(1);
+	}
 	
 	public int getId() {
 		return id;

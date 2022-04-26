@@ -41,7 +41,7 @@ CREATE TABLE themes (
 CREATE TABLE book_themes (
 	idBook				int(4)		NOT NULL,
 	idTheme				int(4)		NOT NULL,
-	FOREIGN KEY (idBook) REFERENCES books(id),
+	FOREIGN KEY (idBook) REFERENCES books(id) ON DELETE CASCADE,
 	FOREIGN KEY (idTheme) REFERENCES themes(id)
 ) ENGINE = InnoDB;
 
