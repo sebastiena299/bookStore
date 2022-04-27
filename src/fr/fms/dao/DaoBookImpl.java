@@ -10,6 +10,69 @@ import java.util.logging.Level;
 import fr.fms.entities.Book;
 
 public class DaoBookImpl implements Dao<Book> {
+	
+	/**
+	 * 
+	 * @param theme
+	 * @return List object of type Book
+	 * @exception SQLException in case of an error related to a query
+	 */
+	public List<Book> readAllByTheme(int theme) {
+		String query = "SELECT books.id, books.title, books.description, books.author, books.price, books.usedBook "
+				+ "FROM books, book_themes, themes "
+				+ "WHERE books.id = book_themes.idBook "
+				+ "AND book_themes.idTheme = themes.id "
+				+ "AND book_themes.idTheme = ?";
+		List<Book> books = new ArrayList<Book>();
+		try(PreparedStatement ps = connection.prepareStatement(query)) {
+			ps.setInt(1, theme);
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				Book book = new Book();
+				book.setId(rs.getInt("id"));
+				book.setTitle(rs.getString("title"));
+				book.setDescription(rs.getString("description"));
+				book.setAuthor(rs.getString("author"));
+				book.setPrice(rs.getFloat("price"));
+				book.setUsedBook(rs.getBoolean("usedBook"));
+				books.add(book);
+			}
+			
+		} catch(SQLException e) {
+			logger.log(Level.SEVERE, " Problem when read books by theme");
+		}
+		return books;
+	}
+	
+	/**
+	 * @param Boolean to know if the book is used
+	 * @return List object of type Book
+	 * @exception SQLException in case of an error related to a query
+	 */
+	public List<Book> readAllByUsed(boolean used) {
+		String query = "SELECT * FROM books WHERE usedBook = ?";
+		List<Book> books = new ArrayList<Book>();
+		try(PreparedStatement ps = connection.prepareStatement(query)) {
+			ps.setBoolean(1, used);
+			ResultSet rs = ps.executeQuery();
+			
+			while(rs.next()) {
+				Book book = new Book();
+				book.setId(rs.getInt("id"));
+				book.setTitle(rs.getString("title"));
+				book.setDescription(rs.getString("description"));
+				book.setAuthor(rs.getString("author"));
+				book.setPrice(rs.getFloat("price"));
+				book.setUsedBook(rs.getBoolean("usedBook"));
+				books.add(book);
+			}
+			
+		} catch(SQLException e) {
+			logger.log(Level.SEVERE, " Problem when read used or not used books");
+		}
+		return books;
+	}
 
 	/**
 	 * @param Object of type Book

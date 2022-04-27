@@ -40,7 +40,6 @@ public class BddConnection {
 	}
 	
 	public static Connection getConnection() {
-		System.out.println("Connexion établie");
 		return connexion;
 	}
 

@@ -1,30 +1,24 @@
 package fr.fms.dao;
 
-import fr.fms.entities.Book;
-import fr.fms.entities.Customer;
-import fr.fms.entities.Order;
-import fr.fms.entities.OrderDetail;
-import fr.fms.entities.Theme;
-
 public class DaoFactory {
 	
-	public static Dao<Book> getBookDao() {
+	public static DaoBookImpl getBookDao() {
 		return new DaoBookImpl();
 	}
 	
-	public static Dao<Customer> getCustomerDao() {
+	public static DaoCustomerImpl getCustomerDao() {
 		return new DaoCustomerImpl();
 	}
 	
-	public static Dao<Order> getOrderDao() {
+	public static DaoOrderImpl getOrderDao() {
 		return new DaoOrderImpl();
 	}
 	
-	public static Dao<OrderDetail> getOrderDetailDao() {
+	public static DaoOrderDetailImpl getOrderDetailDao() {
 		return new DaoOrderDetailImpl();
 	}
 	
-	public static Dao<Theme> getThemeDao() {
+	public static DaoThemeImpl getThemeDao() {
 		return new DaoThemeImpl();
 	}
 

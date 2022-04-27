@@ -1,6 +1,8 @@
 package fr.fms;
 
-import fr.fms.dao.Dao;
+import java.util.Arrays;
+import java.util.List;
+
 import fr.fms.dao.DaoBookImpl;
 import fr.fms.dao.DaoCustomerImpl;
 import fr.fms.dao.DaoFactory;
@@ -17,13 +19,20 @@ public class DaoTest {
 
 	public static void main(String[] args) {
 		
-		Dao<Book> bookDao = DaoFactory.getBookDao();
-		Dao<Customer> userDao = DaoFactory.getCustomerDao();
-		Dao<Order> orderDao = DaoFactory.getOrderDao();
-		Dao<OrderDetail> orderDetailDao = DaoFactory.getOrderDetailDao();
-		Dao<Theme> themeDao = DaoFactory.getThemeDao();
+		DaoBookImpl bookDao = DaoFactory.getBookDao();
+		DaoCustomerImpl userDao = DaoFactory.getCustomerDao();
+		DaoOrderImpl orderDao = DaoFactory.getOrderDao();
+		DaoOrderDetailImpl orderDetailDao = DaoFactory.getOrderDetailDao();
+		DaoThemeImpl themeDao = DaoFactory.getThemeDao();
 		
 		// BOOKS
+		
+		// READ BY THEME => OK
+		//bookDao.readAllByTheme(2).stream().forEach(book -> System.out.println(book));
+		//formatData();
+		
+		// READ BY USED => OK
+		//bookDao.readAllByUsed(true).stream().forEach(book -> System.out.println(book));
 		
 		// READ ALL => OK
 		//bookDao.readAll().stream().forEach(book -> System.out.println(book));

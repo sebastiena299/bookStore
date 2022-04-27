@@ -9,6 +9,16 @@ import fr.fms.entities.Customer;
 public class IBusiness implements IBusinessBook, IBusinessCustomer {
 	
 	private static HashMap<Integer, Book> cart;
+	
+	@Override
+	public List<Book> getAllBooksByUsed(boolean used) {
+		return bookDao.readAllByUsed(used);
+	}
+	
+	@Override
+	public List<Book> getAllBooksByTheme(int id) {
+		return bookDao.readAllByTheme(id);
+	}
 
 	@Override
 	public List<Book> getAllBooks() {

@@ -2,13 +2,13 @@ package fr.fms.business;
 
 import java.util.List;
 
-import fr.fms.dao.Dao;
 import fr.fms.dao.DaoFactory;
+import fr.fms.dao.DaoOrderDetailImpl;
 import fr.fms.entities.OrderDetail;
 
 public interface IBusinessOrderDetail {
 	
-	public Dao<OrderDetail> orderDetailDao = DaoFactory.getOrderDetailDao();
+	public DaoOrderDetailImpl orderDetailDao = DaoFactory.getOrderDetailDao();
 	
 	public List<OrderDetail> getAllOrderDetails();
 	public OrderDetail getOrderDetailById(int id);
