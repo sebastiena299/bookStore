@@ -2,10 +2,14 @@ package fr.fms;
 
 import fr.fms.dao.DaoBookImpl;
 import fr.fms.dao.DaoCustomerImpl;
+import fr.fms.dao.DaoOrderDetailImpl;
 import fr.fms.dao.DaoOrderImpl;
+import fr.fms.dao.DaoThemeImpl;
 import fr.fms.entities.Book;
 import fr.fms.entities.Customer;
 import fr.fms.entities.Order;
+import fr.fms.entities.OrderDetail;
+import fr.fms.entities.Theme;
 
 public class Test {
 
@@ -14,6 +18,8 @@ public class Test {
 		DaoBookImpl shop = new DaoBookImpl();
 		DaoCustomerImpl userDao = new DaoCustomerImpl();
 		DaoOrderImpl orderDao = new DaoOrderImpl();
+		DaoOrderDetailImpl orderDetailDao = new DaoOrderDetailImpl();
+		DaoThemeImpl themeDao = new DaoThemeImpl();
 		
 		// BOOKS
 		
@@ -65,6 +71,40 @@ public class Test {
 		
 		// CREATE => OK
 		//orderDao.create(new Order((float) 219.88, 3));
+		
+		// ORDER DETAIL
+		
+		// READ ALL => OK
+		//orderDetailDao.readAll().stream().forEach(orderDetail -> System.out.println(orderDetail));
+		
+		// READ BY ID => OK
+		//System.out.println(orderDetailDao.read(3));
+		
+		// DELETE => OK
+		//orderDetailDao.delete(4);
+		
+		// UPDATE => OK
+		//orderDetailDao.update(new OrderDetail(2, 2, 1, 54, 4));
+		
+		// CREATE => OK
+		//orderDetailDao.create(new OrderDetail(2, 1, 26, 12));
+		
+		// THEME
+		
+		// READ ALL => OK
+		//themeDao.readAll().stream().forEach(theme -> System.out.println(theme));
+		
+		// READ BY ID => OK
+		//System.out.println(themeDao.read(2));
+		
+		// DELETE => OK
+		//themeDao.delete(8);
+		
+		// UPDATE => OK
+		//themeDao.update(new Theme(10, "cours d'anglais"));
+		
+		// CREATE =>
+		//themeDao.create(new Theme("comics"));
 		
 	}
 

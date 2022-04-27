@@ -7,6 +7,15 @@ public class Theme {
 	
 	public Theme() {};
 	
+	public Theme(String name) {
+		setName(name);
+	}
+	
+	public Theme(int id, String name) {
+		setId(id);
+		setName(name);
+	}
+	
 	public int getId() {
 		return id;
 	}

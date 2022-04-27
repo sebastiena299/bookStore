@@ -10,6 +10,21 @@ public class OrderDetail {
 	
 	public OrderDetail() {};
 	
+	public OrderDetail(int idOrder, int idBook, float price, int quantity) {
+		setIdOrder(idOrder);
+		setIdBook(idBook);
+		setQuantity(quantity);
+		setPrice(price);
+	}
+	
+	public OrderDetail(int id, int idOrder, int idBook, float price, int quantity) {
+		setId(id);
+		setIdOrder(idOrder);
+		setIdBook(idBook);
+		setQuantity(quantity);
+		setPrice(price);
+	}
+	
 	public int getId() {
 		return id;
 	}
