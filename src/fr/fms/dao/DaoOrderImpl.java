@@ -3,6 +3,7 @@ package fr.fms.dao;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.logging.Level;
@@ -19,10 +20,15 @@ public class DaoOrderImpl implements Dao<Order> {
 	@Override
 	public boolean create(Order order) {
 		String query = "INSERT INTO orders (idUser, totalAmount, createdAt) VALUES (?, ?, NOW())";
-		try(PreparedStatement ps = connection.prepareStatement(query)) {
+		try(PreparedStatement ps = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
 			ps.setInt(1, order.getIdUser());
 			ps.setFloat(2, order.getTotalAmount());
-			if(ps.executeUpdate() == 1) return true;
+			try(ResultSet rs = ps.getGeneratedKeys()) {
+				if(rs.next()) {
+					order.setId(rs.getInt(1));
+					return true;
+				}
+			}
 			
 		} catch(SQLException e) {
 			logger.log(Level.SEVERE, " Problem when creating a order");
