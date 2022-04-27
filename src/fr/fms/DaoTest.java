@@ -1,7 +1,9 @@
 package fr.fms;
 
+import fr.fms.dao.Dao;
 import fr.fms.dao.DaoBookImpl;
 import fr.fms.dao.DaoCustomerImpl;
+import fr.fms.dao.DaoFactory;
 import fr.fms.dao.DaoOrderDetailImpl;
 import fr.fms.dao.DaoOrderImpl;
 import fr.fms.dao.DaoThemeImpl;
@@ -11,32 +13,32 @@ import fr.fms.entities.Order;
 import fr.fms.entities.OrderDetail;
 import fr.fms.entities.Theme;
 
-public class Test {
+public class DaoTest {
 
 	public static void main(String[] args) {
 		
-		DaoBookImpl shop = new DaoBookImpl();
-		DaoCustomerImpl userDao = new DaoCustomerImpl();
-		DaoOrderImpl orderDao = new DaoOrderImpl();
-		DaoOrderDetailImpl orderDetailDao = new DaoOrderDetailImpl();
-		DaoThemeImpl themeDao = new DaoThemeImpl();
+		Dao<Book> bookDao = DaoFactory.getBookDao();
+		Dao<Customer> userDao = DaoFactory.getCustomerDao();
+		Dao<Order> orderDao = DaoFactory.getOrderDao();
+		Dao<OrderDetail> orderDetailDao = DaoFactory.getOrderDetailDao();
+		Dao<Theme> themeDao = DaoFactory.getThemeDao();
 		
 		// BOOKS
 		
 		// READ ALL => OK
-		//shop.readAll().stream().forEach(book -> System.out.println(book));
+		//bookDao.readAll().stream().forEach(book -> System.out.println(book));
 		
 		// READ BY ID => OK
-		//System.out.println(shop.read(10));
+		//System.out.println(bookDao.read(10));
 		
 		// DELETE BY ID => OK
-		//shop.delete(10);
+		//bookDao.delete(10);
 		
 		// UPDATE => OK
-		//shop.update(new Book(1, "AIRBUS", "Guide aviation", "Sebastien", (float) 15.99, true));
+		//bookDao.update(new Book(1, "AIRBUS", "Guide aviation", "Sebastien", (float) 15.99, true));
 		
 		// CREATE => OK
-		//shop.create(new Book("Elevation","On lui doit plus de cinquante romans et autant de nouvelles","Stephen King", (float) 34.99, false));
+		//bookDao.create(new Book("Elevation","On lui doit plus de cinquante romans et autant de nouvelles","Stephen King", (float) 34.99, false));
 		
 		// CUSTOMERS
 		
