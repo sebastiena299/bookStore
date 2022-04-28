@@ -4,7 +4,7 @@
 
 - [x] :triangular_ruler: Use Case Diagram
 - [x] :triangular_ruler: Class Diagram
-- [ ] :triangular_ruler: Sequence Diagram
+- [x] :triangular_ruler: Sequence Diagram
 - [x] :page_facing_up: Functional specifications
 - [x] :triangular_ruler: Database with physical schema
 - [x] :lock: Restricted right on it
@@ -23,6 +23,8 @@
 ![Diagram_Class](Diagram_Class.png)
 
 ### :triangular_ruler: Sequence Diagram :
+
+![Sequence_Diagram](Sequence_Diagram.png)
 
 ### :page_facing_up: Functional specifications :
 
