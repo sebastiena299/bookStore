@@ -12,7 +12,7 @@ public interface IBusinessOrder {
 	
 	public List<Order> getAllOrders();
 	public Order getOrderById(int id);
-	public boolean createOrder(Order order);
+	public boolean createOrder(int id);
 	public boolean updateOrder(Order order);
 	public boolean deleteOrder(Order order);
 

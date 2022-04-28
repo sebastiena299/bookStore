@@ -23,6 +23,7 @@ public class DaoOrderImpl implements Dao<Order> {
 		try(PreparedStatement ps = connection.prepareStatement(query, Statement.RETURN_GENERATED_KEYS)) {
 			ps.setInt(1, order.getIdUser());
 			ps.setFloat(2, order.getTotalAmount());
+			ps.executeUpdate();
 			try(ResultSet rs = ps.getGeneratedKeys()) {
 				if(rs.next()) {
 					order.setId(rs.getInt(1));
